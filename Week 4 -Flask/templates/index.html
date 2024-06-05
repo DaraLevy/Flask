@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wine Classifier</title>
+    <style>
+      body {
+        background-image: url("/static/background.jpg");
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      form, h1 {
+        text-align: center;
+      }
+
+      form {
+        margin: 0 auto;
+        max-width: 400px;
+      }
+      
+      .result {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      button[type="submit"] {
+        background-color: #1A2B4C;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: 2px solid black;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+        border: none;
+        border: 2px solid black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Iris Flower Classifier</h1>
+    <form method="POST" action="/predict">
+      <label for="alcohol"></label>
+      <input type="text" id="alcohol" name="alcohol" placeholder="Alcohol"><br><br>
+
+      <label for="malic_acid"></label>
+      <input type="text" id="malic_acid" name="malic_acid" placeholder="Malic Acid"><br><br>
+
+      <label for="ash"></label>
+      <input type="text" id="ash" name="ash" placeholder="Ash"><br><br>
+
+      <label for="alcalinity_ash"></label>
+      <input type="text" id="alcalinity_ash" name="alcalinity_ash" placeholder="Alcalinity of Ash"><br><br>
+
+      <label for="magnes"></label>
+      <input type="text" id="magnes" name="magnes" placeholder="Magnesium"><br><br>
+
+      <label for="total_phenols"></label>
+      <input type="text" id="total_phenols" name="total_phenols" placeholder="Total Phenols"><br><br>
+
+      <label for="flavanoids"></label>
+      <input type="text" id="flavanoids" name="flavanoids" placeholder="Flavanoids"><br><br>
+
+      <label for="nonflava"></label>
+      <input type="text" id="nonflava" name="nonflava" placeholder="Nonflavanoids phenols"><br><br>
+
+      <label for="proant"></label>
+      <input type="text" id="proant" name="proant" placeholder="Proanthocyanins"><br><br>
+
+      <label for="color_int"></label>
+      <input type="text" id="color_int" name="color_int" placeholder="Color intensity"><br><br>
+
+      <label for="hue"></label>
+      <input type="text" id="hue" name="hue" placeholder="Hue"><br><br>
+
+      <label for="diluted_wine"></label>
+      <input type="text" id="diluted_wine" name="diluted_wine" placeholder="OD280/OD315 of diluted wines"><br><br>
+
+      <label for="proline"></label>
+      <input type="text" id="proline" name="proline" placeholder="Proline"><br><br>
+
+      <button type="submit">Predict</button>
+    </form>
+    <p class="result">{{ prediction_text }}</p>
+  </body>
+</html>
